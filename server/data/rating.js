@@ -1,9 +1,8 @@
-const ratings = [
+const ratingdata = [
   {
-    rating: Number,
-    avgRating: Number,
-    game: 'gameName',
-    maxRating: ['5'],
-    minRating: ['1'],
+    rating: 1,
+    avgRating: 5,
   },
 ];
+
+export default ratingdata;

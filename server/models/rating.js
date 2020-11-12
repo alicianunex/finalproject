@@ -11,8 +11,6 @@ const RatingSchema = new mongoose.Schema(
 );
 const Rating = mongoose.model('Rating', RatingSchema);
 
-export default RatingSchema;
-
 export const getAllRating = async () => {
   try {
     return await Rating.find();
@@ -20,3 +18,13 @@ export const getAllRating = async () => {
     throw new Error(error);
   }
 };
+
+export const createRatingResource = async (data) => {
+  try {
+    return await Rating.create({ ...data });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export default Rating;
