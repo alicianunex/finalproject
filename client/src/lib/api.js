@@ -1,10 +1,17 @@
-const BASE_URL = 'https://api.igdb.com/v4/games';
+const BASE_URL = 'https://api.igdb.com/v4';
 
-const PARAMS = '&limit=1&offset=0&rating';
-
-export const getAllGame = async () => {
+export const getAllGames = async () => {
   try {
-    const response = await fetch(`${BASE_URL}&q=${query}${PARAMS}/games`);
+    const response = await fetch(`${BASE_URL}/games`, {
+      method: 'POST',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        'Client-ID': 'q6cc09e4hkzisjmef211tnb5ls0s1r',
+        Authorization: 'Bearer s9vpgvoim6mva370w4kgadxyd76c0j',
+      },
+      body: JSON.stringify(),
+    });
     const data = await response.json();
     console.log(response);
     return data;

@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import logger from './lib/logger.js';
 import mongoose from 'mongoose';
+import cors from 'cors';
 
 //Middleware
 import httpLoggerMiddleware from './middleware/logger-middleware.js';
@@ -23,6 +24,7 @@ mongoose.connect(databaseURI, {
   useUnifiedTopology: true,
 });
 
+server.use(cors());
 server.use(bodyParser.json());
 server.use(httpLoggerMiddleware);
 server.use(jsonResponseMiddleware);
