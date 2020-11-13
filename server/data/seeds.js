@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 import { databaseURI } from '../index.js';
 ///Models
-import rating from '../models/rating.js';
+import Rating from '../models/rating.js';
 ///Data
-import rating from './rating.js';
+import ratingdata from './rating.js';
 
 mongoose.connect(databaseURI, {
   useFindAndModify: false,
@@ -12,8 +12,8 @@ mongoose.connect(databaseURI, {
 });
 
 Promise.all(
-  rating.map(async (ratingItem) => {
-    const ratingResource = await rating.create({ ...ratingItem });
+  ratingdata.map(async (ratingItem) => {
+    const ratingResource = await Rating.create({ ...ratingItem });
     console.log(
       `The resource ${JSON.stringify(ratingResource)} has been created`,
     );

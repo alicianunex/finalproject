@@ -50,3 +50,21 @@ export const updateRatingById = async (request, response) => {
     });
   }
 };
+
+// POST /Rating with JSON in the body
+export const createRating = async (request, response) => {
+  // get access to the data sent it by the client
+
+  const { body } = request;
+
+  try {
+    // Call a function that is declared in the resource model
+    const newRatingResource = await createRatingResource(body);
+    return response.status(201).send(newRatingResource);
+  } catch (error) {
+    // Because Daytabases can be in other location can't assume that every DB request is succesful
+    return response.status(500).send({
+      message: `Error: not connection to database, ${error}.`,
+    });
+  }
+};
