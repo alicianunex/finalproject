@@ -1,17 +1,10 @@
-const BASE_URL = 'https://api.igdb.com/v4';
+const BASE_URL = 'https://www.giantbomb.com/api/games';
 
 export const getAllGames = async () => {
   try {
-    const response = await fetch(`${BASE_URL}/games`, {
-      method: 'POST',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-        'Client-ID': 'q6cc09e4hkzisjmef211tnb5ls0s1r',
-        Authorization: 'Bearer s9vpgvoim6mva370w4kgadxyd76c0j',
-      },
-      body: JSON.stringify(),
-    });
+    const response = await fetch(
+      `https://cors-anywhere.herokuapp.com/https://www.giantbomb.com/api/games/?api_key=cb575ea5ad8d10edf1bcc1221cd0f11115bc7ed4&format=json&filter=original_release_date:2017-07-01 |2018-12-31`,
+    );
     const data = await response.json();
     console.log(response);
     return data;

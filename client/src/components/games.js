@@ -1,6 +1,5 @@
 import React from 'react';
 import { getAllGames } from '../lib/api';
-
 class Games extends React.Component {
   state = {
     games: [],
@@ -13,25 +12,20 @@ class Games extends React.Component {
   async componentDidMount() {
     try {
       const res = await getAllGames();
-      this.setState({ games: res });
+      this.setState({ games: res.results }, console.log(this.state.games));
       console.log(res);
     } catch (err) {}
   }
   render() {
     return (
       <div>
-        {/* <div className="box2">
-          {this.state.games.map((game) => (
-            <div>
-              <h1 className="ginfo">{game.name}</h1>
-              {/* <h2 className="ginfo">{game.age}</h2>
-              <h3 className="ginfo">{game.company}</h3>
-              <h4 className="ginfo">{game.genre}</h4>
-              <h5 className="ginfo">{game.plataform}</h5> */}
-        {/* <img alt={game.name} className="gamephoto" src={game.image} /> */}
-        {/* </div>
-          ))}
-        </div>  */}
+        {this.state.games.map((game) => (
+          <div>
+            <p>{game.name}</p>
+            <p>{game.deck}</p>
+            <img src={game.image.screen_url} />
+          </div>
+        ))}
       </div>
     );
   }
