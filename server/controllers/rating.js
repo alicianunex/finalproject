@@ -1,4 +1,4 @@
-import { getAllRating, createRatingResource, updateRatingResource } from '../models/rating.js';
+import { getAllRating, createRatingResource, updateRatingResource, getRatingResourceByGBId } from '../models/rating.js';
 // From the URL GET /Rating
 export const listRating = async (request, response, next) => {
   try {
@@ -12,22 +12,23 @@ export const listRating = async (request, response, next) => {
 };
 
 // From the URL GET /Rating/:id
-export const getRatingById = async (request, response, next) => {
+export const getRatingByGBId = async (request, response, next) => {
   // URL parameters defined in the router
   const {
     params: { id },
   } = request;
   // Call a function that is declared in the resource model
-  const RatingResource = await getRatingResourceById(id);
-  // If we have a Rating resource
-  if (RatingResource) {
-    // return resource and 200 OK status
-    return response.status(200).send(RatingResource);
-  } else {
-    // if not sent 404 Resource not found
+  const RatingResource = await getRatingResourceByGBId(id);
+  console.log('resource rating is', RatingResource.length)
+  if (RatingResource.length === 0) {
     return response.status(404).send({
       message: 'Error: Rating resource not found.',
-    });
+    })
+    // return resource and 200 OK status
+    
+  } else if (RatingResource) {
+    // if not sent 404 Resource not found
+    return response.status(200).send(RatingResource);
   }
 };
 
