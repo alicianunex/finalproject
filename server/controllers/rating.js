@@ -1,4 +1,4 @@
-import { getAllRating } from '../models/rating.js';
+import { getAllRating, createRatingResource, updateRatingResource } from '../models/rating.js';
 // From the URL GET /Rating
 export const listRating = async (request, response, next) => {
   try {
@@ -38,7 +38,7 @@ export const updateRatingById = async (request, response) => {
     params: { id },
     body,
   } = request;
-
+  console.log(body)
   try {
     // Call a function that is declared in the resource model
     const RatingResource = await updateRatingResource(id, body);
@@ -56,9 +56,10 @@ export const createRating = async (request, response) => {
   // get access to the data sent it by the client
 
   const { body } = request;
-
+  console.log(body)
   try {
     // Call a function that is declared in the resource model
+    console.log('reached here')
     const newRatingResource = await createRatingResource(body);
     return response.status(201).send(newRatingResource);
   } catch (error) {

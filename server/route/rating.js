@@ -14,4 +14,4 @@ ratingRouter.post('/rating', createRating);
 // Update PUT
 ratingRouter.put('/rating/:id', updateRatingById);
 
-export default listRating;
+export default ratingRouter

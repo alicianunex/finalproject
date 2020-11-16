@@ -3,9 +3,9 @@ import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import Header from './header.js';
 import Footer from './footer.js';
 import '../styles/index.css';
-import Games from './home.js';
 
 // pages
+import Games from './home.js';
 import Rating from '../pages/rating.js';
 
 class App extends React.Component {
@@ -17,10 +17,10 @@ class App extends React.Component {
             <Header />
           </section>
           <Switch>
-            <Route path="/" component={Games} />
-            <Route path="/rating" component={Rating} />
-            <Footer />
+            <Route exact path="/" component={Games} />
+            <Route path="/rating/:id" component={Rating} />
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     );

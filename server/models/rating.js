@@ -2,8 +2,12 @@ import mongoose from 'mongoose';
 
 const RatingSchema = new mongoose.Schema(
   {
-    rating: [{ type: Number, min: 1, max: 5 }],
-    avgRating: { type: Number },
+    ratings: [
+      { 
+        rating: {type: Number, min: 1, max: 5 }
+      }
+    ],
+    game: Number
   },
   {
     timestamps: true,
@@ -21,7 +25,20 @@ export const getAllRating = async () => {
 
 export const createRatingResource = async (data) => {
   try {
+    console.log('reached here')
     return await Rating.create({ ...data });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const updateRatingResource = async (id, data) => {
+  console.log(data)
+  try {
+    const ratingToUpdate = await Rating.findById(id)
+    ratingToUpdate.ratings.push(data)
+    ratingToUpdate.save()
+    return ratingToUpdate;
   } catch (error) {
     throw new Error(error);
   }

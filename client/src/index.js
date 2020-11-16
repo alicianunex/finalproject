@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './components/App';
-import 'react-bnb-gallery/dist/style.css';
 
 ReactDOM.render(
   <React.StrictMode>
