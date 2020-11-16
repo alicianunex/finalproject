@@ -7,7 +7,7 @@ const RatingSchema = new mongoose.Schema(
         rating: {type: Number, min: 1, max: 5 }
       }
     ],
-    game: Number
+    gbGameId: Number
   },
   {
     timestamps: true,
@@ -39,6 +39,16 @@ export const updateRatingResource = async (id, data) => {
     ratingToUpdate.ratings.push(data)
     ratingToUpdate.save()
     return ratingToUpdate;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+
+export const getRatingResourceByGBId = async (id) => {
+  try {
+    const rating = await Rating.find({ gbGameId: id});
+    return rating
   } catch (error) {
     throw new Error(error);
   }
