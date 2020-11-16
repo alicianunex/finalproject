@@ -1,0 +1,34 @@
+#games {
+  padding: 4rem;
+  margin-top: 10%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 2.4rem;
+}
+
+article {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 0 12px #555;
+  transition: all 0.2s;
+}
+
+article:hover {
+  box-shadow: 0 0 4px #999 inset;
+}
+
+div {
+  margin-top: 1rem;
+  width: 424px;
+}
+
+p {
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.7rem;
+}

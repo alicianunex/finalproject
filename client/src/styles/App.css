@@ -1,38 +1,118 @@
-.App {
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+p.name,
+p.info,
+header,
+nav {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #000000;
   text-align: center;
+  -webkit-perspective: 50em;
+  perspective: 50em;
+}
+img.image {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 50%;
+  text-align: center;
+  -webkit-perspective: 50em;
+  perspective: 50em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p.name,
+p.info,
+img.image * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+p.name,
+p.info,
+img.image {
+  max-width: 100%;
+  vertical-align: top;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 90vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: baseline;
+  background-color: #f5f5f5;
 }
 
-.App-link {
-  color: #61dafb;
+div .name {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  position: absolute;
+  z-index: 10;
+}
+img.image:hover {
+  filter: grayscale(0) opacity(1);
+  box-shadow: 0px 8px 4px rgba(0, 0, 0, 0.3), 0px 10px 2px rgba(0, 0, 0, 0.1);
+  filter: grayscale(1) opacity(0.8);
+}
+div::before,
+div::after {
+  transform: scaleY(-1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div.columis-one-half-desktop :checked {
+  filter: none;
+  transform: scaleY(1);
+}
+div.columis-one-half-desktop {
+  box-sizing: content-box;
+}
+p {
+  display: inline-block;
+  width: 250px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+/*reflection*/
+div:hover::after {
+  content: '';
+  background-image: inherit;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  width: inherit;
+  height: 40%;
+  position: absolute;
+  bottom: -25%;
+}
+
+/*fade reflection*/
+div:hover::before {
+  content: '';
+  width: inherit;
+  height: 42%;
+  position: absolute;
+  bottom: -25%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.5)
+  );
+  z-index: 1;
 }

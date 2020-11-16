@@ -1,5 +1,7 @@
 import React from 'react';
+import Footer from './footer';
 import { getAllGames } from '../lib/api';
+
 class Games extends React.Component {
   state = {
     games: [],
@@ -18,15 +20,22 @@ class Games extends React.Component {
   }
   render() {
     return (
-      <div>
-        {this.state.games.map((game) => (
-          <div>
-            <p>{game.name}</p>
-            <p>{game.deck}</p>
-            <img src={game.image.screen_url} />
-          </div>
-        ))}
-      </div>
+      <>
+        <div>
+          <main id="games">
+            <section className="container">
+              {this.state.games.map((game) => (
+                <article className="gamebox">
+                  <img className="image" src={game.image.screen_url} />
+                  <h2 className="name">{game.name}</h2>
+                  <p className="info">{game.deck}</p>
+                </article>
+              ))}
+            </section>
+          </main>
+          <Footer />
+        </div>
+      </>
     );
   }
 }
