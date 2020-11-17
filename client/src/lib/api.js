@@ -2,6 +2,8 @@ const BASE_URL = 'https://www.giantbomb.com/api/games';
 
 const { REACT_APP_SERVER_URL } = process.env;
 
+console.log({ REACT_APP_SERVER_URL });
+
 export const getAllGames = async () => {
   try {
     const response = await fetch(

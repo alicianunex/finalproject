@@ -33,10 +33,7 @@ server.use(httpLoggerMiddleware);
 server.use(jsonResponseMiddleware);
 server.use(ratingRouter);
 // Inicializa el servidor
-server.listen(
-  PORT,
-  () =>
-    // utilizando el logger de la libreria winston imprimo en consola que el servidor se ha iniciado
-    logger.info(`server listening ${JSON.stringify({ HOST, PORT })}`),
-  console.log(`Working`),
+server.listen(PORT, () =>
+  // utilizando el logger de la libreria winston imprimo en consola que el servidor se ha iniciado
+  logger.info(`server listening ${JSON.stringify({ HOST, PORT })}`),
 );
