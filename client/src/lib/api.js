@@ -1,5 +1,9 @@
 const BASE_URL = 'https://www.giantbomb.com/api/games';
 
+const { REACT_APP_SERVER_URL } = process.env;
+
+console.log({ REACT_APP_SERVER_URL });
+
 export const getAllGames = async () => {
   try {
     const response = await fetch(
@@ -28,7 +32,7 @@ export const getGameById = async (id) => {
 
 export const getGameRating = async (gBid) => {
   try {
-    const response = await fetch(`http://localhost:5000/rating/${gBid}`);
+    const response = await fetch(`${REACT_APP_SERVER_URL}/rating/${gBid}`);
     const data = await response.json();
     console.log(response);
     return data;
@@ -39,7 +43,7 @@ export const getGameRating = async (gBid) => {
 
 export const createGameRating = async (gBid, rating) => {
   try {
-    const response = await fetch('http://localhost:5000/rating', {
+    const response = await fetch(`${REACT_APP_SERVER_URL}/rating`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -63,7 +67,7 @@ export const createGameRating = async (gBid, rating) => {
 
 export const addGameRating = async (id, rating) => {
   try {
-    const response = await fetch(`http://localhost:5000/rating/${id}`, {
+    const response = await fetch(`${REACT_APP_SERVER_URL}/rating/${id}`, {
       method: 'PUT',
       headers: {
         Accept: 'application/json',

@@ -1,8 +1,19 @@
 {
   "name": "videogamesrates",
+  "private": true,
   "version": "1.0.0",
   "main": "index.js",
   "author": "alicia nunez",
   "license": "MIT",
-  "repository": "git@github.com:alicianunezisaac/finalproject.git"
+  "repository": "git@github.com:alicianunezisaac/finalproject.git",
+  "dependencies": {
+    "lerna": "^3.22.1"
+  },
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "start": "yarn workspace server start"
+  }
 }
