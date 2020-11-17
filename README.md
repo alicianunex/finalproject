@@ -26,7 +26,7 @@ or click the link to go live❕
 - [ ] And so show less game per page
 - [ ] Align items on ratings page
 - [ ] Retouch CSS in general
-- [ ] Turn into a responsive web app
+- [ ] Turn into a responsive web
 
 ##### Made with LOVE by ALICIA NÚÑEZ - 2020 
 🤍🤍🤍
