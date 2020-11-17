@@ -20,6 +20,13 @@ http://localhost:3000
 
 or click the link to go live❕
 
+## TODO
+
+- [ ] Recharge Button
+- [ ] And so show less game per page
+- [ ] Align items on ratings page
+- [ ] Retouch CSS in general
+- [ ] Turn into a responsive web app
 
 ##### Made with LOVE by ALICIA NÚÑEZ - 2020 
 🤍🤍🤍
