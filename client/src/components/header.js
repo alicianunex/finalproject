@@ -9,9 +9,6 @@ const Header = () => {
         <Link to="/" id="one">
           INDEX
         </Link>
-        <Link to="/rating" id="two">
-          RATING
-        </Link>
       </nav>
     </header>
   );

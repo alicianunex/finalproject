@@ -1,0 +1,30 @@
+/*RATINGPAGEs*/
+
+button {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+img.imagerates {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+  display: block;
+  max-width: 100%;
+  transition: opacity 0.2s ease-in-out;
+}
+
+img.imagerates:hover {
+  opacity: 0.5;
+}
+img.imagerates::after,
+img.imagerates::before {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+  transition: transform 0.4s ease-out;
+  color: #fff;
+}
