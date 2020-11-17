@@ -20,7 +20,7 @@ http://localhost:3000
 
 or click the link to go live❕
 
-#### TECHNOLOGIES 
+##### *extra* TECHNOLOGIES 
 
 * [Materil-UI](https://material-ui.com/): Version 4.9.1
 
