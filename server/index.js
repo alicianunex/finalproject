@@ -3,6 +3,9 @@ import bodyParser from 'body-parser';
 import logger from './lib/logger.js';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 //Middleware
 import httpLoggerMiddleware from './middleware/logger-middleware.js';
