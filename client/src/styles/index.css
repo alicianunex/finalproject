@@ -36,18 +36,14 @@ article {
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: 2px auto 0;
-  max-width: 550px;
-  min-height: 300px;
   padding: 24px;
   position: relative;
-  width: 80%;
   margin-top: 40px;
-  height: calc(100% - 40px);
-  /* background-image: repeating-linear-gradient(
-    white 0px,
-    white 24px,
-    steelblue 25px
-  ); */
+  max-height: 45vh;
+  max-width: 50vh;
+  overflow: hidden;
+  border-radius: 20px 16px 12px 32px;
+  box-shadow: 2px 6px 40px 0px #63dbe4a8;
 }
 
 article:before,

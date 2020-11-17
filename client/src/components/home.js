@@ -29,7 +29,7 @@ class Games extends React.Component {
                   <article className="gamebox">
                     <img className="image" src={game.image.screen_url} />
                     <h2 className="name">{game.name}</h2>
-                    {/* <p className="info">{game.deck}</p> */}
+                    <p className="info">{game.deck}</p>
                   </article>
                 </Link>
               ))}

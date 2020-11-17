@@ -28,56 +28,54 @@ export const getGameById = async (id) => {
 
 export const getGameRating = async (gBid) => {
   try {
-    const response = await fetch(`http://localhost:5000/rating/${gBid}`)
-    const data = await response.json()
-    console.log(response)
-    return data
+    const response = await fetch(`http://localhost:5000/rating/${gBid}`);
+    const data = await response.json();
+    console.log(response);
+    return data;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 export const createGameRating = async (gBid, rating) => {
   try {
     const response = await fetch('http://localhost:5000/rating', {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         gbGameId: gBid,
         ratings: [
-            {
-                rating: rating
-            }
-        ]
-      })
-    })
-    const data = await response.json()
-    return data
+          {
+            rating: rating,
+          },
+        ],
+      }),
+    });
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 export const addGameRating = async (id, rating) => {
   try {
     const response = await fetch(`http://localhost:5000/rating/${id}`, {
       method: 'PUT',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(
-            {
-                rating: rating
-            }
-        )
-    })
-    const data = await response.json()
-    return data
+      body: JSON.stringify({
+        rating: rating,
+      }),
+    });
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};

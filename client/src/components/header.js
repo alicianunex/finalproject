@@ -9,6 +9,9 @@ const Header = () => {
         <Link to="/" id="one">
           INDEX
         </Link>
+        {/* <button type="submit" class="reload">
+          Next Game
+        </button> */}
       </nav>
     </header>
   );
