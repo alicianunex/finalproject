@@ -12,7 +12,7 @@ import jsonResponseMiddleware from './middleware/json-response.js';
 import ratingRouter from './route/rating.js';
 
 const HOST = process.env.HOST || '127.0.0.1';
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 export const databaseURI =
   process.env.DATABASE_URL || 'mongodb://localhost/videogamesratings';
 
