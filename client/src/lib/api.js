@@ -3,7 +3,8 @@ const BASE_URL = 'https://www.giantbomb.com/api/games';
 const { REACT_APP_SERVER_URL } = process.env;
 
 console.log({ REACT_APP_SERVER_URL });
-
+//Function to make a request to the GiantBomb API. Responds with an object containing an array of results,
+//containing 100 games.
 export const getAllGames = async () => {
   try {
     const response = await fetch(
@@ -16,7 +17,8 @@ export const getAllGames = async () => {
     console.log(error);
   }
 };
-
+// Function to make a request to the GiantBomb API for the details of a specific game, using the unique ID
+// of that game from the GiantBomb API
 export const getGameById = async (id) => {
   try {
     const response = await fetch(
@@ -29,7 +31,7 @@ export const getGameById = async (id) => {
     console.log(error);
   }
 };
-
+// Function to make a request to the app's server, to get the object containing all the ratings for that game, using the GiantBomb ID of that game.
 export const getGameRating = async (gBid) => {
   try {
     const response = await fetch(`${REACT_APP_SERVER_URL}/rating/${gBid}`);
@@ -40,7 +42,7 @@ export const getGameRating = async (gBid) => {
     console.log(error);
   }
 };
-
+// Function to create a game with its initial rating within the rating database, passing the Giantbomb ID as the argument to link it to a specific game within the Giantbomb API.
 export const createGameRating = async (gBid, rating) => {
   try {
     const response = await fetch(`${REACT_APP_SERVER_URL}/rating`, {
@@ -64,7 +66,7 @@ export const createGameRating = async (gBid, rating) => {
     console.log(error);
   }
 };
-
+// Function to add a rating to a game that already exists within the rating database.
 export const addGameRating = async (id, rating) => {
   try {
     const response = await fetch(`${REACT_APP_SERVER_URL}/rating/${id}`, {
